@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'User: $BUILD_USER'
+                echo BUILD_USER
             }
         }
     }
