@@ -4,7 +4,7 @@ pipeline {
     }
     
     stages {
-        stage('Hello') {
+        stage('Init user from git') {
             steps {
                 script {
                     wrap([$class: 'BuildUser']) {
