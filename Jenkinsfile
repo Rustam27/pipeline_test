@@ -15,6 +15,8 @@ pipeline {
                     echo "${USER_ID}"
                     echo "${USER_USER}"
                 }
+                
+                sh './test.sh'
             }
         }
     }
