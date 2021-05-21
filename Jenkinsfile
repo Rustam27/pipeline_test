@@ -2,16 +2,17 @@ pipeline {
     agent {
         label "android"
     }
+    
+    environment {
+        wrap([$class: 'BuildUser']) {
+            USER_ID = env.BUILD_USER_ID
+        }
+    }
 
     stages {
         stage('Hello') {
             steps {
-                script {
-                    wrap([$class: 'BuildUser']) {
-                        def user = env.BUILD_USER_ID
-                        echo "$user"
-                    }   
-                }
+                echo "${USER_ID}"
             }
         }
     }
